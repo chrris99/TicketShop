@@ -15,7 +15,7 @@ build:
 
   artifacts:
   - image: confortichristian/auth
-    context: services/auth
+    context: ./services/auth
     docker:
       dockerfile: docker/Dockerfile
     sync:
