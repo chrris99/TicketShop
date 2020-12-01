@@ -14,11 +14,11 @@ build:
     push: false
 
   artifacts:
-  - image: confortichristian/auth
-    context: ./services/auth
-    docker:
-      dockerfile: docker/Dockerfile
-    sync:
-      manual:
-        - src: 'src/**/*.ts'
-          dest: .
+    - image: confortichristian/auth
+      context: auth
+      docker:
+        dockerfile: docker/Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
