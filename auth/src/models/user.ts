@@ -5,7 +5,7 @@ interface IUser {
     password: string
 }
 
-interface IUserModel extends IUser, mongoose.Model<IUserDocument> { 
+interface IUserModel extends mongoose.Model<IUserDocument> { 
     build(attributes: IUser): IUserDocument
 }
 
