@@ -1,0 +1,24 @@
+apiVersion: skaffold/v2beta8
+kind: Config
+
+metadata:
+  name: blog
+
+deploy:
+  kubectl:
+    manifests:
+      - ./kubernetes/*
+
+build:
+  local:
+    push: false
+
+  artifacts:
+  - image: confortichristian/auth
+    context: services/auth
+    docker:
+      dockerfile: docker/Dockerfile
+    sync:
+      manual:
+        - src: 'src/**/*.ts'
+          dest: .
