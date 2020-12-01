@@ -5,21 +5,28 @@ interface IUser {
     password: string
 }
 
-interface IUserModel extends IUser, mongoose.Document { }
+interface IUserModel extends IUser, mongoose.Model<IUserDocument> { 
+    build(attributes: IUser): IUserDocument
+}
+
+interface IUserDocument extends mongoose.Document {
+    email: string
+    password: string
+}
 
 const UserSchema = new mongoose.Schema({
     email: { type: String, required: true },
     password: { type: String, required: true }
 })
 
-UserSchema.static('create', (attributes: IUser) => {
+UserSchema.static('build', (attributes: IUser) => {
     return new User(attributes)
 })
 
-const User = mongoose.model<IUserModel>('User', UserSchema)
+const User = mongoose.model<IUserDocument, IUserModel>('User', UserSchema)
 
-User.create({
-    email: "hello",
+const user = User.build({
+    email: 'test@test.com',
     password: 'password'
 })
 
