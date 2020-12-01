@@ -10,7 +10,7 @@ export class DatabaseConnectionError extends CustomError {
     }
 
     serializeErrors() {
-        console.log('[DatabaseConnectionError]: Error connecting to database')
+        console.error('[DatabaseConnectionError]: Error connecting to database')
         return [{ message: 'Error connecting to database' }]
     }
 }

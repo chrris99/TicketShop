@@ -9,7 +9,7 @@ export class RouteNotFoundError extends CustomError {
     }
 
     serializeErrors() {
-        console.log('[RouteNotFoundError]: Route not found')
+        console.error('[RouteNotFoundError]: Route not found')
         return [{ message: 'Route not found' }]
     }
 }
