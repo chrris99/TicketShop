@@ -19,6 +19,11 @@ app.use(signInRouter)
 app.use(signOutRouter)
 app.use(signUpRouter)
 
+app.get('/auth', (req, res)  => {
+    console.log(req)
+    res.status(200).send('Authentication succesful')
+})
+
 app.all('*', () => {
     throw new RouteNotFoundError()
 })
