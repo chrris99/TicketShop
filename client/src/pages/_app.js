@@ -1,5 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css'
 
-export default ({ Component, pageProps }) => {
+const Client = ({ Component, pageProps }) => {
     return <Component {...pageProps} />
 }
+
+export default Client

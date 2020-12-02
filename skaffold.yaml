@@ -28,5 +28,5 @@ build:
         dockerfile: docker/Dockerfile
       sync:
         manual:
-          - src: 'pages/**/*.js'
+          - src: 'src/**/*.js'
             dest: .
