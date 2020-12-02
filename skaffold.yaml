@@ -14,7 +14,7 @@ build:
     projectId: ticketshop-dev-297312
 
   artifacts:
-    - image: gcr.io/ticketshop-dev-297312/auth
+    - image: confortichristian/auth
       context: auth
       docker:
         dockerfile: docker/Dockerfile

@@ -4,9 +4,7 @@ metadata:
   name: ingress-srv
   annotations:
     kubernetes.io/ingress.class: nginx
-    kubernetes.io/ingress.global-static-ip-name: ticketdev-ip
     nginx.ingress.kubernetes.io/use-regex: 'true'
-    networking.gke.io/managed-certificates: ticketshop-certificate
 spec:
   rules:
     - host: ticketshop.dev
@@ -16,12 +14,3 @@ spec:
             backend:
               serviceName: auth-srv
               servicePort: 3000
----
-apiVersion: networking.gke.io/v1beta2
-kind: ManagedCertificate
-metadata:
-  name: ticketshop-certificate
-spec:
-  domains:
-    - ticketshop.dev
-              
