@@ -27,11 +27,6 @@ app.use(signInRouter)       // POST /api/users/signin
 app.use(signOutRouter)      // POST /api/users/signout
 app.use(signUpRouter)       // POST /api/users/signup
 
-app.all('/auth', (req, res) => {
-    console.log('Authenticating')
-    res.status(200).send('Succesful authentication')
-})
-
 app.all('*', () => {
     throw new RouteNotFoundError()
 })
