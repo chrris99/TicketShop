@@ -22,3 +22,11 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
+    - image: confortichristian/client
+      context: client
+      docker:
+        dockerfile: docker/Dockerfile
+      sync:
+        manual:
+          - src: 'pages/**/*.js'
+            dest: .
