@@ -22,10 +22,10 @@ app.use(
 )
 
 // Routes
-app.use(currentUserRouter)
-app.use(signInRouter)
-app.use(signOutRouter)
-app.use(signUpRouter)
+app.use(currentUserRouter)  // GET  /api/users/currentuser
+app.use(signInRouter)       // POST /api/users/signin
+app.use(signOutRouter)      // POST /api/users/signout
+app.use(signUpRouter)       // POST /api/users/signup
 
 app.all('/auth', (req, res) => {
     console.log('Authenticating')
@@ -40,6 +40,11 @@ app.all('*', () => {
 app.use(errorHandler)
 
 const startService = async () => {
+    // Check that required environment variable is defined
+    if (!process.env.JWT_KEY) {
+        throw new Error('JWT_KEY must be defined')
+    }
+
     try {
         await mongoose.connect('mongodb://auth-mongo-srv:27017/auth', {
             useNewUrlParser: true,

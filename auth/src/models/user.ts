@@ -20,6 +20,15 @@ const UserSchema = new mongoose.Schema({
     password: { type: String, required: true }
 })
 
+UserSchema.set('toJSON', {
+    transform(doc: any, ret: { password: any, __v: any, _id: any, id: any }) {
+        ret.id = ret._id
+        delete ret._id
+        delete ret.password
+        delete ret.__v
+    }
+})
+
 UserSchema.pre('save', async function() {
     if (this.isModified('password')) {
         const hashedPassword = await Password.hash(this.get('password'))
@@ -32,10 +41,5 @@ UserSchema.static('build', (attributes: IUser) => {
 })
 
 const User = mongoose.model<IUserDocument, IUserModel>('User', UserSchema)
-
-const user = User.build({
-    email: 'test@test.com',
-    password: 'password'
-})
 
 export { User }
