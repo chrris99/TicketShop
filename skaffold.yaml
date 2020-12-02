@@ -10,8 +10,8 @@ deploy:
       - ./kubernetes/*
 
 build:
-  googleCloudBuild:
-    projectId: ticketshop-dev-297312
+  local:
+    push: false
 
   artifacts:
     - image: confortichristian/auth
