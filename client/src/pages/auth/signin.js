@@ -13,24 +13,25 @@ const SignInPage = () => {
         },
         onSuccess: () => Router.push('/')
     })
+
     const onSubmit = async (event) => {
         event.preventDefault()
         doRequest()
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            <h1>Sign In</h1>
+        <form className="form-signin" onSubmit={onSubmit}>
+            <h1 className="h3 mb-3 font-weight-normal">Sign In</h1>
 
             <div className="form-group">
-                <label>Email Address</label>
-                <input 
-                    type="email" 
-                    className="form-control" 
-                    placeholder="Email"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                />
+            <label>Email Address</label>
+            <input 
+                type="email" 
+                className="form-control" 
+                placeholder="Email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+            />
             </div>
 
             <div className="form-group">
@@ -46,7 +47,7 @@ const SignInPage = () => {
 
             {errors}
             
-            <button type="submit" className="btn btn-primary">Sign In</button>
+            <button class="btn btn-primary" type="submit">Sign in</button>
         </form>
     )
 }
