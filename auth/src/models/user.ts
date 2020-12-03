@@ -7,7 +7,7 @@ interface IUser {
 }
 
 interface IUserModel extends mongoose.Model<IUserDocument> { 
-    build(attributes: IUser): IUserDocument
+    build(user: IUser): IUserDocument
 }
 
 interface IUserDocument extends mongoose.Document {
@@ -36,8 +36,8 @@ UserSchema.pre('save', async function() {
     }
 })
 
-UserSchema.static('build', (attributes: IUser) => {
-    return new User(attributes)
+UserSchema.static('build', (user: IUser) => {
+    return new User(user)
 })
 
 const User = mongoose.model<IUserDocument, IUserModel>('User', UserSchema)
