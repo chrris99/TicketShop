@@ -1,10 +1,9 @@
 import express, { Request, Response } from 'express'
 import { body } from 'express-validator'
 import jwt from 'jsonwebtoken'
+import { validateRequest, BadRequestError } from '@ccticketshop/shared'
 
-import { validateRequest } from '@ccticketshop/shared'
 import { User } from '../models/user'
-import { BadRequestError } from '@ccticketshop/shared'
 
 const router = express.Router()
 
