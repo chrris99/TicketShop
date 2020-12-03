@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from 'express'
 
-import { NotAuthorizedError } from '../errors/not-authorized-error'
+import { NotAuthorizedError } from '../errors/notAuthorizedError'
 
 // The middleware should be used afater the currentUser middleware
 export const requireAuth = (req: Request, res: Response, next: NextFunction) => {
     if (!req.currentUser) {
-        throw new NotAuthorizedError()
+        throw new NotAuthorizedError('User not authorized')
     }
 
     next()

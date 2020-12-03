@@ -1,4 +1,4 @@
-import { CustomError } from './custom-error'
+import { CustomError } from './CustomError'
 
 export class BadRequestError extends CustomError {
     httpStatusCode = 400
@@ -9,7 +9,7 @@ export class BadRequestError extends CustomError {
     }
 
     serializeErrors() {
-        console.error(this.message)
+        console.error(`(${this.httpStatusCode}) [BadRequestError] ${this.message}`)
         return [{ message: this.message }]
     }  
 }

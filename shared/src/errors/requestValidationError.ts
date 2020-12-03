@@ -1,5 +1,5 @@
 import { ValidationError } from 'express-validator'
-import { CustomError } from './custom-error'
+import { CustomError } from './CustomError'
 
 export class RequestValidationError extends CustomError {
     httpStatusCode = 400
@@ -11,7 +11,7 @@ export class RequestValidationError extends CustomError {
 
     serializeErrors() {
         return this.errors.map(err => {
-            console.error(`[RequestValidationError]: ${err.msg}`)
+            console.error(`(${this.httpStatusCode}) [RequestValidationError] ${err.msg}`)
             return { message: err.msg, field: err.param }
         })
     }
