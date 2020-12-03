@@ -1,4 +1,4 @@
-import { CustomError } from './CustomError'
+import { CustomError } from './customError'
 
 export class RouteNotFoundError extends CustomError {
     httpStatusCode = 404

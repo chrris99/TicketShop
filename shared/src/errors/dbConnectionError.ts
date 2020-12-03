@@ -1,4 +1,4 @@
-import { CustomError } from './CustomError'
+import { CustomError } from './customError'
 
 export class DbConnectionError extends CustomError {
     httpStatusCode = 500

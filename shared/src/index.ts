@@ -1,6 +1,6 @@
 // Errors
 export * from './errors/badRequestError'
-export * from './errors/CustomError'
+export * from './errors/customError'
 export * from './errors/dbConnectionError'
 export * from './errors/notAuthorizedError'
 export * from './errors/requestValidationError'
