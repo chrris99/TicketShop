@@ -8,8 +8,8 @@ import { currentUserRouter } from './routes/current-user'
 import { signInRouter } from './routes/signin'
 import { signOutRouter } from './routes/signout'
 import { signUpRouter } from './routes/signup'
-import { errorHandler } from './middlewares/error-handler'
-import { RouteNotFoundError } from './errors/route-not-found-error'
+import { errorHandler } from '@ccticketshop/shared'
+import { RouteNotFoundError } from '@ccticketshop/shared'
 
 const app = express()
 app.set('trust proxy', true)
@@ -28,7 +28,7 @@ app.use(signOutRouter)      // POST /api/users/signout
 app.use(signUpRouter)       // POST /api/users/signup
 
 app.all('*', () => {
-    throw new RouteNotFoundError()
+    throw new RouteNotFoundError('Route not found')
 })
 
 // Middlewares
