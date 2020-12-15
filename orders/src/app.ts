@@ -4,10 +4,10 @@ import { json } from 'body-parser'
 import cookieSession from 'cookie-session'
 import { errorHandler, currentUser, RouteNotFoundError } from '@ccticketshop/shared'
 
-import { createTicketRouter } from './routes/create'
-import { getTicketRouter } from './routes/get'
-import { getAllTicketsRouter } from './routes/list'
-import { updateTicketRouter } from './routes/update'
+import { createOrderRouter } from './routes/create'
+import { getOrderRouter } from './routes/get'
+import { listOrdersRouter } from './routes/list'
+import { deleteOrderRouter } from './routes/delete'
 
 // App
 const app = express()
@@ -22,10 +22,10 @@ app.use(
 app.use(currentUser)
 
 // Routes
-app.use(createTicketRouter)     // POST /api/tickets
-app.use(getTicketRouter)        // GET  /api/tickets/:id
-app.use(getAllTicketsRouter)    // GET  /api/tickets
-app.use(updateTicketRouter)     // PUT  /api/tickets/:id
+app.use(createOrderRouter)     // POST     /api/orders
+app.use(getOrderRouter)        // GET      /api/orders/:id
+app.use(listOrdersRouter)      // GET      /api/orders
+app.use(deleteOrderRouter)     // DELETE   /api/orders/:id
 
 app.all('*', () => {
     throw new RouteNotFoundError('Route not found')
