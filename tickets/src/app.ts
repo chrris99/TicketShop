@@ -4,9 +4,9 @@ import { json } from 'body-parser'
 import cookieSession from 'cookie-session'
 import { errorHandler, currentUser, RouteNotFoundError } from '@ccticketshop/shared'
 
-import { createTicketRouter } from './routes/createTicket'
-import { getTicketRouter } from './routes/getTicket'
-import { getAllTicketsRouter } from './routes/getTickets'
+import { createTicketRouter } from './routes/create'
+import { getTicketRouter } from './routes/get'
+import { getAllTicketsRouter } from './routes/list'
 import { updateTicketRouter } from './routes/update'
 
 // App
