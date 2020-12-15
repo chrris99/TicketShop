@@ -40,3 +40,12 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
+
+    - image: confortichristian/orders
+      context: orders
+      docker:
+        dockerfile: docker/Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
