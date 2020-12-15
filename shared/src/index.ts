@@ -20,3 +20,5 @@ export * from './messaging/subjects'
 // Events
 export * from './messaging/events/ticket-created-event'
 export * from './messaging/events/ticket-updated-event'
+
+export * from './messaging/types/order-status'
