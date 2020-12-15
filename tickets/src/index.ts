@@ -2,6 +2,8 @@ import mongoose from 'mongoose'
 
 import { app } from './app'
 
+console.clear()
+
 const startService = async () => {
     // Check that required environment variable is defined
     if (!process.env.JWT_KEY) {
