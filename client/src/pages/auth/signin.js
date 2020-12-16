@@ -21,7 +21,7 @@ const SignInPage = () => {
 
     return (
         <form className="form-signin" onSubmit={onSubmit}>
-            <h1 className="h3 mb-3 font-weight-normal">Sign In</h1>
+            <h1 className="mt-3 mb-3 font-weight-normal">Sign In</h1>
 
             <div className="form-group">
             <label>Email Address</label>

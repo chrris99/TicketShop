@@ -20,12 +20,12 @@ const HomePage = ({ currentUser, tickets }) => {
     })
 
     const user = currentUser 
-        ? <h3>Hi, you are logged in as {currentUser}</h3> 
-        : <h3>You are not logged in</h3>
+        ? <h4 className="mb-4">Hi, you are logged in as {currentUser.email}</h4> 
+        : <h4 className="mb-4">You are not logged in</h4>
 
     return (
         <div>
-            <h1>Tickets</h1>
+            <h1 className="mt-3 mb-4">Tickets</h1>
             {user}
             <table className="table">
                 <thead>

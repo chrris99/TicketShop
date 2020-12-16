@@ -20,7 +20,7 @@ const SignUpPage = () => {
 
     return (
         <form onSubmit={onSubmit}>
-            <h1 className="h3 mb-3 font-weight-normal">Sign Up</h1>
+            <h1 className="mt-3 mb-3 font-weight-normal">Sign Up</h1>
 
             <div className="form-group">
                 <label>Email Address</label>

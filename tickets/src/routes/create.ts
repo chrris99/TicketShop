@@ -25,9 +25,9 @@ async (req: Request, res: Response) => {
     await ticket.save()
 
     await new TicketCreatedPublisher(natsWrapper.client).publish({
-        id:     ticket.id,
-        title:  ticket.title,
-        price:  ticket.price,
+        id: ticket.id!,
+        title: ticket.title,
+        price: ticket.price,
         userId: ticket.userId
     })
 
