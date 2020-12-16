@@ -38,8 +38,6 @@ TicketSchema.static('build', (ticket: ITicket) => {
     return new Ticket(ticket)
 })
 
-TicketSchema.method()
-
 const Ticket = mongoose.model<ITicketDocument, ITicketModel>('Ticket', TicketSchema)
 
 export { Ticket, ITicketDocument }

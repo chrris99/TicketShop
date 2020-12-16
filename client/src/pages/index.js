@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 const HomePage = ({ currentUser, tickets }) => {
+
     const ticketList = tickets.map(ticket => {
         return (
             <tr key={ticket.id}>
@@ -18,9 +19,14 @@ const HomePage = ({ currentUser, tickets }) => {
         )
     })
 
+    const user = currentUser 
+        ? <h3>Hi, you are logged in as {currentUser}</h3> 
+        : <h3>You are not logged in</h3>
+
     return (
         <div>
             <h1>Tickets</h1>
+            {user}
             <table className="table">
                 <thead>
                     <tr>
